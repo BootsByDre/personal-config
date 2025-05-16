@@ -1,0 +1,4 @@
+# This file contains custom git aliases for reuse in git configuration
+
+[alias]
+    st = status
