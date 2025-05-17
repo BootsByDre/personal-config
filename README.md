@@ -16,5 +16,5 @@ To use the custom git config from `personal.gitconfig`, include it in your globa
 
 ```
 [include]
-    path = ~/.code/personal-config/personal.gitconfig
+    path = ~/code/personal-config/personal.gitconfig
 ```
