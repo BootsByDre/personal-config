@@ -1,4 +1,12 @@
 # This file contains custom git aliases for reuse in git configuration
 
 [alias]
+    # Basic abbreviations
     st = status
+    df = diff
+    ps = push
+    pl = pull
+    br = branch
+    rb = rebase
+    fe = fetch
+    co = checkout
