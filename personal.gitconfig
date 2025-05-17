@@ -8,5 +8,18 @@
     pl = pull
     br = branch
     rb = rebase
+    rbc = rebase --continue
     fe = fetch
     co = checkout
+    cm = commit -m
+
+    # Advanced committing
+    crn = commit --amend
+    cam = "!git add -A && git commit -a -m"
+    camn = "!git add -A && git commit -a -n -m"
+    am = "!git add -A && git commit -n --amend --no-edit"
+    wip = "!git add -A && git commit -n -m \"~~~ WORK IN PROGRESS ~~~\" && git status && echo \"\\n----- WORK SAVED IN TEMP COMMIT -----\\n\""
+    piw = "!git reset HEAD~1 && git reset HEAD -- . && git status && echo \"\\n----- RESUMING FROM LAST COMMIT -----\\n\""
+    un-c = reset HEAD~1
+    kill-c = reset --hard HEAD~1
+    clear = checkout HEAD ./
