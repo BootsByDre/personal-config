@@ -24,6 +24,8 @@
 
     # Branch management
     brn = branch -m
+    brc = "!f() { git checkout -b $1 -t \"$(git branch-name)\"; }; f"
+    brm = "!f() { git checkout -b $1 -t \"$(git main-branch-name)\"; }; f"
 
     # Setting upstream
     us = branch --set-upstream-to
@@ -44,3 +46,10 @@
     # Push commands
     pso = "!git push origin \"$(git branch-name)\""
     psof = !git pso -f
+
+
+
+
+
+
+  
