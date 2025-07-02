@@ -32,7 +32,7 @@
     usm = "!git branch --set-upstream-to origin/\"$(git main-branch-name)\""
     uso = "!git branch --set-upstream-to origin/\"$(git branch-name)\""
 
-    # Advanced committing
+    # Committing
     crn = commit --amend
     cam = "!git add -A && git commit -a -m"
     camn = "!git add -A && git commit -a -n -m"
@@ -43,13 +43,11 @@
     kill-c = reset --hard HEAD~1
     clear = checkout HEAD ./
     
-    # Push commands
+    # Pushing
     pso = "!git push origin \"$(git branch-name)\""
     psof = !git pso -f
 
-
-
-
-
-
-  
+    # Diffing
+    dfm = "!git df \"$(git main-branch-name)\""
+    dfo = diff origin
+    dfn = !git --no-pager diff --name-only
