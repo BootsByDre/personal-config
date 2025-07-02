@@ -51,3 +51,6 @@
     dfm = "!git df \"$(git main-branch-name)\""
     dfo = diff origin
     dfn = !git --no-pager diff --name-only
+
+    # Workflow commands
+    prb = "!f() { CUR_BR="\"$(git branch-name)\""; git co \"$(git us-branch-name)\"; git pl; git co $CUR_BR; git rb; }; f"
