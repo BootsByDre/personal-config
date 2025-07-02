@@ -13,13 +13,34 @@
     co = checkout
     cm = commit -m
 
+    # "Variable" aliases
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    us-branch-name = "!git rev-parse --abbrev-ref \"$(git branch-name)\"@{u}"
+    main-branch-name = "!git config init.defaultBranch"
+
+    # Checkout
+    com = "!git checkout \"$(git main-branch-name)\""
+    cou = "!git checkout \"$(git us-branch-name)\""
+
+    # Branch management
+    brn = branch -m
+
+    # Setting upstream
+    us = branch --set-upstream-to
+    usm = "!git branch --set-upstream-to origin/\"$(git main-branch-name)\""
+    uso = "!git branch --set-upstream-to origin/\"$(git branch-name)\""
+
     # Advanced committing
     crn = commit --amend
     cam = "!git add -A && git commit -a -m"
     camn = "!git add -A && git commit -a -n -m"
     am = "!git add -A && git commit -n --amend --no-edit"
     wip = "!git add -A && git commit -n -m \"~~~ WORK IN PROGRESS ~~~\" && git status && echo \"\\n----- WORK SAVED IN TEMP COMMIT -----\\n\""
-    piw = "!git reset HEAD~1 && git reset HEAD -- . && git status && echo \"\\n----- RESUMING FROM LAST COMMIT -----\\n\""
+    btw = "!git reset HEAD~1 && git reset HEAD -- . && git status && echo \"\\n----- RESUMING FROM LAST COMMIT -----\\n\""
     un-c = reset HEAD~1
     kill-c = reset --hard HEAD~1
     clear = checkout HEAD ./
+    
+    # Push commands
+    pso = "!git push origin \"$(git branch-name)\""
+    psof = !git pso -f
