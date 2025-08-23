@@ -2,6 +2,9 @@
 
 alias c.="cd .."
 alias pa='eval $(poetry env activate)'
+alias po='poetry run'
+alias pm='poetry run python manage.py'
+alias pmc='poetry run python manage.py shell_plus'
 alias cdc="cd ~/code"
 alias l="ls"
 alias la="ls -a"
