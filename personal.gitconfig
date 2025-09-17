@@ -16,7 +16,7 @@
     # "Variable" aliases
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     us-branch-name = "!git rev-parse --abbrev-ref \"$(git branch-name)\"@{u}"
-    main-branch-name = "!git config init.defaultBranch"
+    main-branch-name = "!git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@'"
 
     # Checkout
     com = "!git checkout \"$(git main-branch-name)\""
